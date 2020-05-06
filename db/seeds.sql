@@ -3,3 +3,4 @@ INSERT INTO actionItems (name, description, complete) VALUES ('Complete excel te
 INSERT INTO actionItems (name, description, complete) VALUES ('Finish programming to-do application', 'Create the front and back-end of the application',false);
 
 INSERT INTO actionItems (name, description, complete) VALUES ('Go to the gym', 'Squats and cable rows',false);
+
