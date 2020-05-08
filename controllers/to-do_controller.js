@@ -6,6 +6,13 @@ function toDo (app) {
             res.render("index", {actionitems: itemData})
         })
     })
+    app.post("/api/items", function(req, res) {
+        const newBody = req.body;
+        model.insertOne(newBody, function(itemData) {
+            res.json(itemData);
+        })
+
+    })
 
 }
 
