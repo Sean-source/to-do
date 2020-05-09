@@ -11,6 +11,7 @@ const model = {
         })
     },
     updateOne: function (condition, controllercb) {
+        console.log("We are in the model." + condition)
         orm.updateOne("actionitems",
             ["name", "description", "complete"], condition, function (itemData) {
                 controllercb(itemData)

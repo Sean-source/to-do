@@ -14,7 +14,7 @@ orm = {
         console.log(statement.sql);
     },
     updateOne: function (tableName, columns, condition, modelcb) {
-        const queryString = "Update" + tableName;
+        let queryString = "Update " + tableName;
         queryString += " SET ";
         queryString += objToSql(columns);
         queryString += " WHERE ";

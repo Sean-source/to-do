@@ -29,14 +29,16 @@ $(".update-item").on("click", function (event) {
         newCondition = true;
     }
 
-    var newConditionState = {
-        complete: newCondition
-    };
+    // var newConditionState = {
+    //     complete: newCondition
+    // };
 
     // Send the PUT request.
     $.ajax("/api/items/" + id, {
         type: "PUT",
-        data: newConditionState
+        data: {
+            complete: newCondition
+        }
     }).then(
         function () {
             console.log(newCondition);
