@@ -1,24 +1,50 @@
 <div class="container">
+    <div class="jumbotron">
+        <h1>To-Do List</h1>
+    </div>
+
+</div>
+<div class="container">
     <div class="row">
+
         <div class="col-sm-4">
+            <h4>Add new</h4>
+            <br>
+
+            <h6>Title</h6>
+            <input type="text" id="items">
+            <br>
+            <br>
+            <h6>Description</h6>
+            <textarea name="" id="description" cols="30" rows="10"></textarea>
+            <button class="btn btn-primary" id="add-item">Add new to-do</button>
+
+        </div>
+
+        <div class="col-sm-4">
+            <h4>Pending Items</h4>
             <ol>
+                <br>
                 {{#each actionitems}}
                 {{#unless complete}}
-                <li>
-                    <h3>{{name}}</h3>
-                    <h4>{{description}}</h4>
 
+
+                <li>
+                    <h6>{{name}}</h6>
+                    <p>{{description}}</p>
+                    <button class="btn btn-primary" "update-item" data-id="{{id}}" data-complete="{{complete}}">Task
+                        Complete</button>
                 </li>
+
+                <hr>
+
                 {{/unless}}
                 {{/each}}
             </ol>
         </div>
+
         <div class="col-sm-4">
-            <input type="text" id="items">
-            <textarea name="" id="description" cols="30" rows="10"></textarea>
-            <button id="add-item">Add new to-do</button>
-        </div>
-        <div class="col-sm-4">
+            <h4>Completed Items</h4>
             <ol>
                 {{#each actionitems}}
                 {{#if complete}}

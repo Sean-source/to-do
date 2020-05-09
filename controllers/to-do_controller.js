@@ -13,6 +13,13 @@ function toDo (app) {
         })
 
     })
+    app.put("/api/items/id:", function(req, res) {
+        const condition = "id = " + req.params.id;
+        model.updateOne(
+           condition, function(result) {
+              res.status(200).end();
+          });
+    })
 
 }
 
