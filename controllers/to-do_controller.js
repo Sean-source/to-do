@@ -21,6 +21,14 @@ function toDo(app) {
         res.status(200).end();
       });
   })
+  app.delete("/api/items/:id", function (req, res) {
+    const condition = req.params.id;
+    console.log(JSON.stringify(req.body))
+    model.deleteOne(
+      condition, function (result) {
+        res.status(200).end();
+      });
+  })
 
 }
 

@@ -21,10 +21,15 @@ orm = {
             }
             modelcb(data);
         })
+    },
+    deleteOne: function (tableName, condition, modelcb) {
 
-
-
-
+        connection.query("DELETE FROM ?? WHERE ? = id", [tableName, condition], function (err, data) {
+            if (err) {
+                throw err;
+            }
+            modelcb(data);
+        })
     }
 }
 

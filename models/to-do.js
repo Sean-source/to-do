@@ -16,6 +16,12 @@ const model = {
             ["name", "description", "complete"], condition, function (itemData) {
                 controllercb(itemData)
             })
+    },
+    deleteOne: function (condition, controllercb) {
+        console.log("We are in the model." + condition)
+        orm.deleteOne("actionitems", condition, function (itemData) {
+                controllercb(itemData)
+            })
     }
 }
 

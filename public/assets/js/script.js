@@ -47,3 +47,15 @@ $(".update-item").on("click", function (event) {
         }
     );
 });
+
+
+$(".delete-item").on("click", function (event) {
+    var id = $(this).data("id");
+
+    $.ajax("/api/items/" + id, {
+        type: "DELETE",
+    }).then(function () {
+        console.log("successfully deleted");
+        location.reload();
+    })
+})
