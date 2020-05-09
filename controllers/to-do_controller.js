@@ -14,7 +14,7 @@ function toDo(app) {
 
   })
   app.put("/api/items/:id", function (req, res) {
-    const condition = "id = " + req.params.id;
+    const condition = req.params.id;
     console.log(JSON.stringify(req.body))
     model.updateOne(
       condition, function (result) {

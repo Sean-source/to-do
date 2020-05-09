@@ -14,20 +14,16 @@ orm = {
         console.log(statement.sql);
     },
     updateOne: function (tableName, columns, condition, modelcb) {
-        let queryString = "Update " + tableName;
-        queryString += " SET ";
-        queryString += objToSql(columns);
-        queryString += " WHERE ";
-        queryString += condition;
 
-        console.log(queryString);
-        connection.query(queryString, function (err, result) {
+        connection.query("UPDATE ?? SET ?? = ? WHERE ? = id", [tableName, "complete", true, condition], function (err, data) {
             if (err) {
                 throw err;
             }
+            modelcb(data);
+        })
 
-            modelcb(result);
-        });
+
+
 
     }
 }
