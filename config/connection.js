@@ -9,6 +9,7 @@ var connection = mysql.createConnection({
     password: process.env.MYSQLPASSWORD,
     database: "toDo"
 });
+//Some sort of white listing, local computer could not connect remotely to jaws however heroku could connect to jaws
 //Initialize connection to local host unless there is a jaws db url environment variable.
 //heroku config:set JAWSDBURL=mysql://...
 if (process.env.JAWSDB_URL) {
