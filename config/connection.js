@@ -9,6 +9,8 @@ var connection = mysql.createConnection({
     password: process.env.MYSQLPASSWORD,
     database: "toDo"
 });
+//Initialize connection to local host unless there is a jaws db url environment variable.
+//heroku config:set JAWSDBURL=mysql://...
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
 }
